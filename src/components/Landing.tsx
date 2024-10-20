@@ -15,12 +15,12 @@ const LoginRoleSelector = () => {
     {
       title: "MINE MANAGER",
       icon: <Pickaxe size={48} />,
-      path: "/login",
+      path: "/login-mining",
     },
     {
       title: "COMPANY",
       icon: <Users size={48} />,
-      path: "/login",
+      path: "/login-company",
     },
   ];
 
