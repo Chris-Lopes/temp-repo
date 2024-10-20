@@ -2,6 +2,7 @@
 import React from "react";
 import { Train, Pickaxe, Users, LogIn, Info } from "lucide-react";
 import { Bell, User } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 
 const LoginRoleSelector = () => {
@@ -9,14 +10,17 @@ const LoginRoleSelector = () => {
     {
       title: "SIDING OPERATOR",
       icon: <Train size={48} />,
+      path: "/login-sliding",
     },
     {
       title: "MINE MANAGER",
       icon: <Pickaxe size={48} />,
+      path: "/login",
     },
     {
       title: "COMPANY",
       icon: <Users size={48} />,
+      path: "/login",
     },
   ];
 
@@ -32,14 +36,11 @@ const LoginRoleSelector = () => {
 
           {/* Right Side - Notification, Profile, Logout */}
           <div className="flex items-center space-x-6 text-black">
-
-
             {/* About */}
             <div className="flex items-center space-x-2 cursor-pointer">
               <Info className="w-5 h-5" />
               <span>About</span>
             </div>
-
 
             {/* Logout */}
             <div className="flex items-center space-x-2 cursor-pointer">
@@ -56,6 +57,7 @@ const LoginRoleSelector = () => {
           {roles.map((role) => (
             <div
               key={role.title}
+              onClick={()=> {window.location.href = role.path}} 
               className="bg-[#40E0D0]  p-8 rounded-lg flex flex-col items-center cursor-pointer transition duration-200 ease-in-out hover:bg-turquoise-500 min-h-[250px] justify-center"
             >
               <div className="bg-white p-4 rounded-lg mb-4">{role.icon}</div>
